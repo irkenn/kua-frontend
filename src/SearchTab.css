@@ -1,0 +1,50 @@
+.handwritten{
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size:1rem;
+}
+
+a {
+    text-decoration: none; 
+    display: flex;  
+}
+
+.card-title{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(61, 61, 61);
+    font-weight: 700;
+    font-size: larger;
+}
+
+.recipe-description{
+    font-style: italic;
+    font-size: 0.8rem;
+}
+.tiny-letter {
+    font-size: 0.7rem;
+}
+
+.recipe-servings{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.username-row{
+    color: rgb(115, 115, 115);
+    font-style: italic;
+    font-size:x-small;
+    /* display: block;
+    text-align: right; */
+    display: flex;
+    justify-content: right; 
+    
+}
+
+.card-img {
+    height: 250px;
+    overflow: hidden;
+}

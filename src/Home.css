@@ -1,0 +1,44 @@
+.Homediv {
+    align-items: center;
+}
+
+.kuaInfo {
+    min-height: 100px;
+    background-color: rgb(213, 182, 242);
+}
+
+.miniTitle{
+    font-family:'Courier New', Courier, monospace;
+    font-size:xx-large;
+    font-weight: 900;
+}
+
+.subTitle{
+    font-size: small;
+    vertical-align: sub;
+}
+
+h3{
+    text-align: left;
+    bottom: 30px;
+}
+
+.introText{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.inside-div{
+    align-items: center;
+}
+
+.handwritten{
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size:18px;
+}
+
+.CenterDiv {
+    text-align: center;
+}
