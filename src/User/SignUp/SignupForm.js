@@ -1,27 +1,30 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import AuthContext from "./AuthContext";
-import KuaApi from "./KuaAPI";
-
+import AuthContext from "../../ContextProvider/AuthContext";
+import KuaApi from "../../APIHelper/KuaAPI";
+import "../Helpers/FormCard.css";
 import {    Container, 
             Col, 
             Row, 
             Card, 
             CardBody, 
             Form,
-            FormGroup
-             } from "reactstrap";
+            FormGroup } from "reactstrap";
 
-function LoginForm(){
+function SignupForm(){
 
     const initialState = {
         username:"",
         email:"",
-        password:"" };
+        bioInfo:"",
+        urlImage:"",
+        password:""
+    };
 
     const [ formData, setFormData ] = useState(initialState);
 
-  //Creates an object with the name of the each field and its corresponding value
+
+    //Creates an object with the name of the each field and its corresponding value
     const handleFormChange = e => {
         const { name, value } = e.target;
         setFormData(data => ({
@@ -31,7 +34,7 @@ function LoginForm(){
     }
 
     //Using the context provider, call the function that updates the user info
-    const {userInfo, changeUserInfo} = useContext(AuthContext);
+    const {changeUserInfo} = useContext(AuthContext);
     //After the form is submitted, it will redirect the user to home using useNavigate.
     const navigate = useNavigate();
 
@@ -44,31 +47,31 @@ function LoginForm(){
             email,
             password } = formData;
         
-        if ( !password || !email && !username ){
-            alert("Please fill all the corresponding fields");
+        if ( !username || !email || !password ){
+            alert("Please fill the required fields");
             return;
         }
-
+        
         try{
             // signUp method add the user to the database and creates a Token
-            const response = await KuaApi.login( formData );
+            const response = await KuaApi.singUp( formData );
             //Update the info stored in state
             changeUserInfo(response);
             //Resets the field in the form
             setFormData(initialState);
             //Takes the user to the homepage
             navigate("/");
-
         }catch(err){
             alert(err);
         }
     }
-    return (
+
+    return(
         <div className="pt-3">
             <Container>
                 <Row>
                     <Col md={{ size: 8, offset:2}} lg={{size:6, offset:3}}>
-                        <h3>Login</h3>
+                        <h3>Sign up!</h3>
                         <Card>
                             <CardBody>
                                 <Form onSubmit={handleSubmit}>
@@ -91,7 +94,28 @@ function LoginForm(){
                                             value={formData.email}
                                             onChange={handleFormChange}
                                             />
-                                    </FormGroup>                                      
+                                    </FormGroup>                                   
+                                    
+                                    <FormGroup>
+                                        <label htmlFor="bioInfo" className="form-label">Bio info</label>
+                                        <input 
+                                            className="form-control"
+                                            type="text"
+                                            name="bioInfo"
+                                            value={formData.bioInfo}
+                                            onChange={handleFormChange}
+                                            />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <label htmlFor="urlImage" className="form-label">Image URL</label>
+                                        <input 
+                                            className="form-control"
+                                            type="text"
+                                            name="urlImage"
+                                            value={formData.urlImage}
+                                            onChange={handleFormChange}
+                                            />
+                                    </FormGroup>
                                     <FormGroup>
                                         <label htmlFor="password" className="form-label">Password</label>
                                         <input 
@@ -104,7 +128,7 @@ function LoginForm(){
                                             />
                                     </FormGroup>
                                     <div className="d-grid">
-                                        <button className="btn btn-primary my-3 p-2">Login</button>
+                                        <button className="btn btn-primary my-3 p-2">Sign up!</button>
                                     </div>
                                 </Form>
                             </CardBody>
@@ -116,4 +140,5 @@ function LoginForm(){
     )
 }
 
-export default LoginForm;
+
+export default SignupForm;

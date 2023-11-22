@@ -1,21 +1,21 @@
 import React, { useState, useContext, useEffect } from "react";
-import "./Home.css";
 import {    Container, 
-            Card, 
-            CardImg,
-            CardTitle,
-            CardBody, 
-            CardText,
-            Col, 
-            Row, 
-            Button } from "reactstrap";
+    Card, 
+    CardImg,
+    CardTitle,
+    CardBody, 
+    CardText,
+    Col, 
+    Row, 
+    Button } from "reactstrap";
 import { Link } from 'react-router-dom';
-import AuthContext from "./AuthContext";
-import KuaApi from "./KuaAPI";
-import SearchTab from "./SearchTab";
-import RecipeCard from "./RecipeCard";
+import AuthContext from "../ContextProvider/AuthContext";
+import KuaApi from "../APIHelper/KuaAPI";
+import SearchTab from "../SearchRecipes/SearchTab";
+import RecipeCard from "../SearchRecipes/RecipeCard";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import "./Home.css";
 
 function LoginHome(){
     
@@ -41,9 +41,11 @@ function LoginHome(){
     return(
         <>
             { homepageInfo ? (  <Container>
-                                    <SearchTab/>
+                                    <Container className="search-tab">
+                                        <SearchTab />
+                                    </Container>
                                     <Container className="link-container">
-                                      <a className="new-recipe-link" href={'/search'}><FontAwesomeIcon className="plus-icon" icon={faPlusCircle}/>  Add a new recipe</a>
+                                      <a className="new-recipe-link" href={'/recipe/add'}><FontAwesomeIcon className="add-plus-icon mx-2" icon={faPlusCircle}/>  Add a new recipe</a>
                                     </Container>
                                     
 

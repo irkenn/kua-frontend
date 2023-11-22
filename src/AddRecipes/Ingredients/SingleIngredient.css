@@ -1,0 +1,36 @@
+.single-ingredient{
+    background-color: rgb(244, 219, 238);
+    align-items: center;
+}
+
+.add-minus-icon{
+    color: rgb(155, 104, 162);
+}
+
+.icon-container{
+    align-items: center;
+    text-align: center;
+}
+
+.ingredient-name{
+    text-align: left;
+    font-weight: 600;
+}
+
+.dropdown-caret{
+    font-size: small;
+}
+.dropdown-name{
+    font-size: small;
+}
+
+.amount-input{
+    width: 100%;
+    box-sizing: border-box;
+    font-size: small;
+}
+
+.center{
+    align-items: center;
+    vertical-align: middle;
+}

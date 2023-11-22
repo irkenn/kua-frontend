@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "reactstrap";
 
-import AuthContext from "./AuthContext";
+import AuthContext from "../ContextProvider/AuthContext";
 
 import "./Navbar.css";
 
@@ -17,6 +17,7 @@ function AppNavbar(){
             let arr = []
             if (userInfo?.username){
                 arr.push(
+                    {label: "Add", path:"/recipe/add"},
                     {label: "Search", path:"/search"},
                     {label: "Home", path:"/"},
                     {label: "Profile", path:`/user/${userInfo.id}`},

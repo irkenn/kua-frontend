@@ -1,0 +1,17 @@
+.edit-card{
+    background-color:white;
+}
+
+.sub-card{
+    background-color:rgba(84, 7, 239, 0.109);
+}
+
+.legend{
+     
+    text-align: center; 
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(122, 119, 119);
+    font-weight: 700;
+    
+}

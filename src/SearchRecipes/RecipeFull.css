@@ -8,6 +8,50 @@ img.user-img{
     position: relative;
 }
 
+.nutrition-info-container{
+    background-color: aliceblue;
+    font-size: small;
+    font-weight: 600;
+}
+
+.nutrition-info-container hr {
+    margin: 0.0rem;
+    opacity: 0.8;
+}
+
+.medium-line{
+    border: none; /* Remove the default border */
+    height: 2px;  /* Set the thickness of the line */
+    background-color: #000000; 
+    margin-top:  30px;
+}
+
+.ultra-big-font{
+    font-size: larger;
+    font-weight: 900;
+}
+
+.extra-big-font{
+    font-size: large;
+    font-weight: 800;
+    
+}
+
+.medium-weight-font{
+    font-weight: 700;
+}
+
+.small-weight-font{
+    font-weight: 700;
+    font-size: x-small;
+}
+
+.thick-line{
+    border: none; /* Remove the default border */
+    height: 10px;  /* Set the thickness of the line */
+    background-color: #000000; 
+}
+
 .user-name {
     text-decoration: none;
     text-align: left; 

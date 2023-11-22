@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import AuthContext from './AuthContext';
+import AuthContext from './ContextProvider/AuthContext';
 
 import { BrowserRouter } from "react-router-dom";
 
-import Navbar from './Navbar';
+import Navbar from './NavBar/Navbar';
 import AppRoutes from './AppRoutes';
 
 function App() {

@@ -56,6 +56,10 @@ class KuaApi {
         
         //second argument 'data' is not needed that's why it's being passed as undefined
         let response = await this.request(`search/recipe/${keyword}`, undefined, 'get', userInfo);
+        
+        //The error message is catched by KuaAPI, this helps in rendering
+        if(response[0] === "The query didn't produced any results")return undefined;
+        
         return response;
     }
 
@@ -76,6 +80,37 @@ class KuaApi {
         let response = await this.request('user/home', undefined, 'get', userInfo);
         return response;
     }
+
+    static async updateUser( data, userInfo ){
+
+        //username has to be url encoded
+        const encodedName = encodeURIComponent(userInfo.username);
+        let response = await this.request(`user/${encodedName}`, data, 'patch', userInfo);
+        return response;
+    }
+
+    static async searchIngredient( ingredientName, userInfo ){
+
+        const response = await this.request(`search/ingredients/${ingredientName}`, undefined, 'get', userInfo);
+        return response;
+    }
+
+    static async getIngredientDetails( ingredientID, userInfo){
+        const response = await this.request(`search/ingredients/${ingredientID}/information`, undefined, 'get', userInfo);
+        return response;
+    }
+
+    static async newRecipe( recipeData, userInfo ){
+        const response = await this.request(`recipe`, recipeData, 'post', userInfo);
+        return response;
+    }
+
+    static async addIngredients( ingredientList, recipeId, userInfo){
+
+        const response = await this.request(`recipe/${recipeId}/add`, ingredientList, 'post', userInfo );
+        return response;
+    }
 }
+
 
 export default KuaApi;

@@ -1,10 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import "./Home.css";
-import AuthContext from "./AuthContext";
-import {    Container, 
-            Col } from "reactstrap";
-import { Link, useNavigate } from 'react-router-dom';
-import LogoutHome from "./LogoutHome";
+import "../../HomePages/Home.css";
+import AuthContext from "../../ContextProvider/AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 function Logout(){
     //This is the piece of state that holds user information and the function to set it.

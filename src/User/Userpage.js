@@ -1,19 +1,16 @@
 import React, { useState, useContext, useEffect } from "react";
-import "./SearchTab.css";
+import "../SearchRecipes/SearchTab.css";
 import {    Container, 
             Card, 
             CardImg,
             CardTitle,
-            CardBody, 
-            CardText,
             Col, 
-            Row, 
-            Button } from "reactstrap";
+            Row } from "reactstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import AuthContext from "./AuthContext";
-import KuaApi from "./KuaAPI";
+import AuthContext from "../ContextProvider/AuthContext";
+import KuaApi from "../APIHelper/KuaAPI";
 import "./Userpage.css";
-import RecipeCard from "./RecipeCard";
+import RecipeCard from "../SearchRecipes/RecipeCard";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
@@ -21,7 +18,7 @@ function Userpage(){
 
     const [ currentUser, setCurrentUser ] = useState("");
     const { userID } = useParams();
-    const { userInfo, changeUserInfo } = useContext(AuthContext);
+    const { userInfo } = useContext(AuthContext);
 
     useEffect( () => {
 
@@ -39,7 +36,7 @@ function Userpage(){
     const goBackFunction = () => {
         navigate(-1);
     };
-    console.log("This is current user from the component", currentUser);
+
     return(
         <Container>
         { currentUser ? (

@@ -42,3 +42,21 @@ h3{
 .CenterDiv {
     text-align: center;
 }
+
+.link-container{
+    display: flex;
+    align-items: center;
+    justify-content: center; /* To horizontally center the content */
+    height: 100%;
+}
+
+.new-recipe-link{
+    color: rgb(82, 97, 64);
+    align-items: center;
+    font-weight: 700;
+    font-size: larger;
+}
+
+.add-plus-icon{
+    color: rgb(82, 97, 64);
+}

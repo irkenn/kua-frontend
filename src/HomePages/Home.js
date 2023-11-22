@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import "./Home.css";
-import AuthContext from "./AuthContext";
+import AuthContext from "../ContextProvider/AuthContext";
 import {    Container, 
             Col } from "reactstrap";
 import { Link, useNavigate } from 'react-router-dom';

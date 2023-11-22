@@ -1,0 +1,40 @@
+.ingredient-row{
+    align-items: center;
+}
+
+.ingredient-check-box {
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: rgb(52, 48, 47) 2px 2px 5px;
+}
+
+.clicked{
+  background-color: rgb(235, 197, 213);
+  border: none;
+  font-weight: 900;
+}
+
+.ingredient-img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    position: relative;
+    border: #5d5959;
+}
+/* Style the radio input to make it more appealing */
+.form-check-input {
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    margin: 0; /* Remove default margin */
+    border: 2px solid #5d5959; /* Add a border */
+    border-radius: 50%; /* Make it a circle */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+  /* Style the label for the radio input */
+.form-check-label {
+  margin-left: 10px; /* Add some spacing between the input and label */
+}
+
+.select-container{
+  text-align: center;
+}

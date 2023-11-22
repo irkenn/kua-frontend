@@ -8,7 +8,7 @@ import {    Card,
             Row } from "reactstrap";
 
 function RecipeCard({recipeInfo}){
-    console.log('recipeInfo in recipe card', recipeInfo);
+    
     return (
 
          <Card className="square-card my-4">
@@ -29,7 +29,7 @@ function RecipeCard({recipeInfo}){
                     <Col xs="8" className="recipe-description" >"{recipeInfo.description}"</Col>
                     <Col xs="4" >
                         <Row className="recipe-servings">
-                            <span>{recipeInfo.calCount}</span> 
+                            <span>{recipeInfo.calPerServing}</span> 
                             <span className="tiny-letter">kcal/serving</span>
                         </Row>
                         <Row className="recipe-servings">
