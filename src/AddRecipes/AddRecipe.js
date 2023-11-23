@@ -24,7 +24,7 @@ function AddRecipe(){
                             preparation: "",
                             description: "",
                             servings: "",
-                            urlImage: "" };
+                            urlImage: "", };
 
     const { userInfo } = useContext(AuthContext);
     const [ formData, setFormData ] = useState(initialState);
@@ -42,8 +42,6 @@ function AddRecipe(){
     
 
     //################## ingredientsList related code ##################
-    
-    
     const setIngredientInfo = async(id) =>{
         //Preserves the 'id' variable across the renders
         
@@ -71,7 +69,12 @@ function AddRecipe(){
         async function getUserID(){
             const { id } = userInfo;
                 //If there's an Id will incorporate it to the form, else will redirect so user can authenticate
-                if(id)setFormData({"userId":id});
+                if(id){
+                    setFormData(data => ({
+                    ...data,
+                    userId:id,
+                    }));
+                }
                 else{navigate('/')};       
         }
         getUserID();
@@ -83,58 +86,55 @@ function AddRecipe(){
             ...data,
             [name]:value
         }))
-    }
-
-    const handleSubmit = async(e) => {
+    };
+    
+    async function handleSubmit(e) {
         //Prevents reloading of the page and similar behaviours
         e.preventDefault();
         // Retrieve each value from the submitted form
         const { title, description, preparation, servings } = formData;
-        
+
         //This block of code checks for empty fields in the form
-        if ( !title || !description || !preparation || !servings ){
+        if (!title || !description || !preparation || !servings) {
             alert("Please fill all the fields to update changes");
             return;
         }
-        if(!ingredientList){
+        if (!ingredientList) {
             alert("Please add ingredients to the recipe");
             return;
-        }else{
-            for( const ingredientId in ingredientList ){
+        } else {
+            for (const ingredientId in ingredientList) {
                 const ingredient = ingredientList[ingredientId];
                 //Each ingredient must have a 'unit' and 'value'
-                if(!ingredient.hasOwnProperty('unit')||!ingredient.hasOwnProperty('amount')){
+                if (!ingredient.hasOwnProperty('unit') || !ingredient.hasOwnProperty('amount')) {
                     alert(`Please fill the required fields for ingredient "${ingredient.name}"`);
                     return;
                 }
             }
         }
-        try{ 
+        try {
             //Uploads the recipe to the API
-            const newRecipe = await KuaApi.newRecipe( formData, userInfo );
-            
+            const newRecipe = await KuaApi.newRecipe(formData, userInfo);
+
             let newIngredients = "";
-            
             // To add the ingredients the API requires the recipe Id "
-            if(newRecipe && newRecipe.id){
+            if (newRecipe && newRecipe.id) {
                 console.log('yesyesyesyesyesyes');
-                newIngredients = await KuaApi.addIngredients( ingredientList, newRecipe.id, userInfo );
+                newIngredients = await KuaApi.addIngredients(ingredientList, newRecipe.id, userInfo);
             }
-            
             // Takes the user to the created recipe page
             navigate(`/recipe/${newRecipe.id}`, { replace: true });
-            
-        }catch(err){
+
+        } catch (err) {
             alert(err);
         }
-    };
-
+    }
 
 
     return(
         <>
             {showIngredientModal && (<IngredientModal setIngredientInfo={setIngredientInfo} />)}
-            <div className={showIngredientModal && `modal-overlay`} onClick={() => toggleModal()}></div>
+            <div className={showIngredientModal ? 'modal-overlay' : ''} onClick={() => toggleModal()}></div>
             <Container className='my-4'>
                 <Row>
                 <Col md={{ size: 8, offset:2}} lg={{size:6, offset:3}}>
@@ -198,21 +198,19 @@ function AddRecipe(){
                                     <Row>
                                         <h4 className="info-title mt-2">Servings</h4>
                                         <DropdownHandler 
-                                            options={[1,2,3,4,5,6,7,8,9,"+10"]} 
+                                            options={[1,2,3,4,5,6,7,8,9,10]} 
                                             customMessage={"Select a number"} 
                                             formName={"servings"}
                                             setFormData={setFormData} 
                                             formData={formData}/>
                                     </Row>
                                     <Row>
-                                        <Container>
-                                        <h4 className="info-title mt-2">Picture URL</h4> 
+                                        <label className="info-title mt-2" >Picture URL</label> 
                                         <input  className="form-control"
                                                 type="text"
                                                 name="urlImage"
                                                 value={formData.urlImage}
                                                 onChange={handleFormChange} />
-                                        </Container>
                                     </Row>
                                 </Form>
                             </CardBody>

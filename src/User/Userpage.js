@@ -43,7 +43,7 @@ function Userpage(){
             <>
                 <Card className="mini-card mt-4">
                     <Row>
-                        <Col xs="4">
+                        <Col xs="3">
                             <CardImg className="big-user-img rounded-circle m-2" 
                                         src={currentUser.urlImage || process.env.PUBLIC_URL + "/Not_found_user.jpg"}
                                         alt="user image" />
@@ -53,9 +53,9 @@ function Userpage(){
                                 <Col>
                                     <CardTitle className="title-1" >{currentUser.username}</CardTitle>
                                 </Col>
-                                <Col className="text-center">
+                                <Col className="recipes-info">
                                     <Row className="big-number">{currentUser.recipes.length}</Row>
-                                    <Row className="info-text">recipes</Row>
+                                    <Row className="info-text ">recipes</Row>
                                 </Col>
                             </Row >
                             <Row  className="description-text ">
