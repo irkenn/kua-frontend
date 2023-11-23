@@ -44,7 +44,7 @@ function LoginForm(){
             email,
             password } = formData;
         
-        if ( !password || !email && !username ){
+        if ( !password || (!email && !username) ){
             alert("Please fill all the corresponding fields");
             return;
         }

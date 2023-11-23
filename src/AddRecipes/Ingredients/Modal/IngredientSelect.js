@@ -1,12 +1,8 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import {    Container, 
             Col, 
             Row,
-            Button, 
-            Card, 
-            CardBody, 
-            Form,
-            FormGroup, 
+            Button,
             CardImg} from "reactstrap";
 import "./IngredientSelect.css";
 

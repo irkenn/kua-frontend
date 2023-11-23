@@ -16,6 +16,7 @@ function Logout(){
         console.log("Logout of the session", "userInfo", userInfo);
         navigate('/');
     }, []);
+    
 
 }
 

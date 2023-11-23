@@ -9,7 +9,7 @@ import "./Navbar.css";
 function AppNavbar(){
 
     //Retrieves the user information 
-    const { userInfo, changeUserInfo } = useContext(AuthContext);
+    const { userInfo } = useContext(AuthContext);
     const [ navbarItems, setNavbarItems ] = useState([]);    
 
     useEffect( () =>{

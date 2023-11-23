@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import "./IngredientModal.css";
 import AuthContext from "../../../ContextProvider/AuthContext";
 import KuaApi from "../../../APIHelper/KuaAPI";

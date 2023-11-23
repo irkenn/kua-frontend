@@ -24,7 +24,7 @@ function EditForm(){
     };
 
 
-    const { userInfo, changeUserInfo } = useContext(AuthContext);
+    const { userInfo } = useContext(AuthContext);
     const [ formData, setFormData ] = useState(initialState);
 
     useEffect( () => {

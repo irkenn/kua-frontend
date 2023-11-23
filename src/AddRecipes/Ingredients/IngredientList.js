@@ -2,13 +2,9 @@ import React from "react";
 
 import {    Container, 
             Col, 
-            Row, 
-            Card, 
-            CardBody, 
-            Form,
-            FormGroup } from "reactstrap";
+            Row } from "reactstrap";
 import SingleIngredient from "./SingleIngredient";
-import DropdownHandler from "../Helpers/DropdownHandler";
+
 
 function IngredientList({ingredientList, setIngredientList}){
 
@@ -19,7 +15,7 @@ function IngredientList({ingredientList, setIngredientList}){
 
     return(
         <Container className="ingredient-list">
-          {ingredientList.length != 0 ?  <Row>
+          {ingredientList.length !== 0 ?  <Row>
                 <Col xs="6">
                 </Col>
                 <Col xs="2" className="ingredient-header">

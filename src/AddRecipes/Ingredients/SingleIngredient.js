@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import "./SingleIngredient.css";
 import {    Container, 
             Col, 
-            Row, 
-            Card, 
-            CardBody, 
-            Form,
-            FormGroup } from "reactstrap";
+            Row  } from "reactstrap";
 import DropdownPossibleUnits from "../Helpers/DropdownPossibleUnits";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';

@@ -25,7 +25,7 @@ function SearchResult(){
             }
         }
         searchKeyword();
-    }, [keyword]);
+    }, [keyword, userInfo]);
     
     return (
         <>

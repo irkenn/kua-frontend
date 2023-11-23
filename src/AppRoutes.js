@@ -10,6 +10,7 @@ import Userpage from "./User/Userpage";
 import EditForm from "./User/LoginAndEdits/EditForm";
 import SearchResult from "./SearchRecipes/SearchResult";
 import AddRecipe from "./AddRecipes/AddRecipe";
+import NotFound from "./NotFound";
 
 function AppRoutes(){
 
@@ -26,7 +27,7 @@ function AppRoutes(){
             <Route exact path="/user/:userID" element={<Userpage />} /> 
             <Route exact path="/recipe/add" element={<AddRecipe />} />
             <Route exact path="/" element={<Home />} />
-            {/* <Route path="*" element={ <NotFound />} /> */}
+            <Route path="*" element={ <NotFound />} />
         </Routes>
     );
 }

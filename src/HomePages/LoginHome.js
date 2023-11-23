@@ -1,14 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
 import {    Container, 
-    Card, 
-    CardImg,
-    CardTitle,
-    CardBody, 
-    CardText,
-    Col, 
-    Row, 
-    Button } from "reactstrap";
-import { Link } from 'react-router-dom';
+            Card, 
+            CardImg,
+            CardTitle,
+            Col, 
+            Row } from "reactstrap";
 import AuthContext from "../ContextProvider/AuthContext";
 import KuaApi from "../APIHelper/KuaAPI";
 import SearchTab from "../SearchRecipes/SearchTab";
@@ -21,7 +17,7 @@ function LoginHome(){
     
     const [ homepageInfo, setHomepageInfo ] = useState("");
     const [ currentUser, setCurrentUser ] = useState("");
-    const { userInfo, changeUserInfo } = useContext(AuthContext);
+    const { userInfo } = useContext(AuthContext);
 
     useEffect( () => {
         //Get's the infromation from the API
@@ -32,7 +28,6 @@ function LoginHome(){
         async function getUserInfo(){
             const response = await KuaApi.getUser(userInfo.id, userInfo);
             setCurrentUser(response);
-            console.log("This is current user from the component", currentUser);
         }
         getUserInfo();
         getHomepageInfo();

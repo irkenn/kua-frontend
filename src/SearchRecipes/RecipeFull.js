@@ -20,7 +20,7 @@ function RecipeFull(){
     
     const [ currentRecipe, setCurrentRecipe ] = useState("");
     const { recipeID } = useParams();
-    const { userInfo, changeUserInfo } = useContext(AuthContext);
+    const { userInfo } = useContext(AuthContext);
     
     useEffect( () =>{
         //Get's the infromation from the API
