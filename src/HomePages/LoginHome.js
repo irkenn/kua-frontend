@@ -41,7 +41,7 @@ function LoginHome(){
                                         <SearchTab />
                                     </Container>
                                     <Container className="link-container">
-                                      <Link className="new-recipe-link" href={'/recipe/add'}><FontAwesomeIcon className="add-plus-icon mx-2" icon={faPlusCircle}/>  Add a new recipe</Link>
+                                      <Link className="new-recipe-link" to="/recipe/add"><FontAwesomeIcon className="add-plus-icon mx-2" icon={faPlusCircle}/>  Add a new recipe</Link>
                                     </Container>
                                     
 
