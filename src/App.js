@@ -40,7 +40,7 @@ function App() {
   
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter >
       <AuthContext.Provider value={{userInfo, changeUserInfo}}>
         <Navbar/>
         <AppRoutes/>

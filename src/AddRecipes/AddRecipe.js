@@ -23,8 +23,7 @@ function AddRecipe(){
                             title: "",
                             preparation: "",
                             description: "",
-                            servings: "",
-                            urlImage: "", };
+                            servings: ""};
 
     const { userInfo } = useContext(AuthContext);
     const [ formData, setFormData ] = useState(initialState);
@@ -59,7 +58,7 @@ function AddRecipe(){
                         }));
                         
         // setIngredientList((ingredientList) => [...ingredientList, newIngredient]);
-        console.log('ingredientList', ingredientList);
+        
     };
 
     //################## end of ingredientsList related code ##################
@@ -119,7 +118,6 @@ function AddRecipe(){
             let newIngredients = "";
             // To add the ingredients the API requires the recipe Id "
             if (newRecipe && newRecipe.id) {
-                console.log('yesyesyesyesyesyes');
                 newIngredients = await KuaApi.addIngredients(ingredientList, newRecipe.id, userInfo);
             }
             // Takes the user to the created recipe page

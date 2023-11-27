@@ -6,15 +6,13 @@ import {    Container,
             CardTitle,
             CardBody, 
             CardText,
-            Col, 
+            Col,
             Row, 
             Button } from "reactstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import AuthContext from "../ContextProvider/AuthContext";
 import KuaApi from "../APIHelper/KuaAPI";
 import "./RecipeFull.css";
-
-
 
 function RecipeFull(){
     

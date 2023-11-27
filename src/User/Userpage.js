@@ -30,7 +30,8 @@ function Userpage(){
         }
         getUserInfo();
     }, []);
-        
+    
+    
     const navigate = useNavigate();
 
     const goBackFunction = () => {
@@ -45,7 +46,7 @@ function Userpage(){
                     <Row>
                         <Col xs="3">
                             <CardImg className="big-user-img rounded-circle m-2" 
-                                        src={currentUser.urlImage || process.env.PUBLIC_URL + "/Not_found_user.jpg"}
+                                        src={currentUser.urlImage || "https://cdn.dribbble.com/users/966009/screenshots/2630351/404-donut-dribble.jpg"}
                                         alt="user image" />
                         </Col >
                         <Col xs="8">
