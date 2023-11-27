@@ -6,7 +6,7 @@ import {    Container,
             CardTitle,
             Col, 
             Row } from "reactstrap";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import AuthContext from "../ContextProvider/AuthContext";
 import KuaApi from "../APIHelper/KuaAPI";
 import "./Userpage.css";
@@ -31,7 +31,7 @@ function Userpage(){
         getUserInfo();
     }, []);
     
-    
+
     const navigate = useNavigate();
 
     const goBackFunction = () => {
@@ -66,7 +66,7 @@ function Userpage(){
                     </Row>
                 </Card>
                 <Col className="mt-2">
-                    <a className="edit-link mx-3" href={`/user/${currentUser.id}/edit`}><FontAwesomeIcon icon={faCog}/>Edit</a>
+                    <Link className="edit-link mx-3" to={`/user/${currentUser.id}/edit`}><FontAwesomeIcon icon={faCog}/>Edit</Link>
                 </Col>
               
                 <hr className="my-2 text-center"/>

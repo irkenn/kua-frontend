@@ -9,7 +9,7 @@ import {    Container,
             Col,
             Row, 
             Button } from "reactstrap";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import AuthContext from "../ContextProvider/AuthContext";
 import KuaApi from "../APIHelper/KuaAPI";
 import "./RecipeFull.css";
@@ -42,15 +42,15 @@ function RecipeFull(){
              <Card className="square-card my-4">
                 <Row>
                     <Col xs="3">
-                        <a href={`/user/${currentRecipe.user.id}`}>
+                        <Link to={`/user/${currentRecipe.user.id}`}>
                             <CardImg className="user-img rounded-circle" src={currentRecipe.user.urlImage || process.env.PUBLIC_URL + "/Not_found_user.jpg"}
                                             alt="user image" />
-                        </a>
+                        </Link>
                     </Col>                
                     <Col >
-                        <a className="user-name" href={`/user/${currentRecipe.user.id}`}>
+                        <Link className="user-name" to={`/user/${currentRecipe.user.id}`}>
                             {currentRecipe.user.username}
-                        </a>
+                        </Link>
                     </Col>    
                 </Row>
             <CardBody>

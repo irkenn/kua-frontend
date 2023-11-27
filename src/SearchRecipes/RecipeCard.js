@@ -6,6 +6,7 @@ import {    Card,
             CardBody, 
             Col, 
             Row } from "reactstrap";
+import { Link } from 'react-router-dom';            
 
 function RecipeCard({recipeInfo}){
     
@@ -14,17 +15,17 @@ function RecipeCard({recipeInfo}){
          <Card className="square-card my-4">
             <CardBody>
                 <CardTitle >
-                    <a className="title" href={`/recipe/${recipeInfo.id}`}>{recipeInfo.title}</a>
+                    <Link className="title" to={`/recipe/${recipeInfo.id}`}>{recipeInfo.title}</Link>
                 </CardTitle>
                 
                 <Row className="username-row mx-1"> 
-                 { recipeInfo.user ? (<> posted by <a className="username-row" href={`/user/${recipeInfo.user.id}`}> {recipeInfo.user.username} </a> </>):(
+                 { recipeInfo.user ? (<> posted by <Link className="username-row" to={`/user/${recipeInfo.user.id}`}> {recipeInfo.user.username} </Link> </>):(
                     null)}
                 </Row>
-                    <a href={`/recipe/${recipeInfo.id}`}>
+                    <Link to={`/recipe/${recipeInfo.id}`}>
                         <CardImg src={recipeInfo.urlImage || process.env.PUBLIC_URL + "/Not_found_recipe.jpg"}
                                     alt="Recipe image" />
-                    </a>
+                    </Link>
                 <Row className="my-2">
                     <Col xs="8" className="recipe-description" >"{recipeInfo.description}"</Col>
                     <Col xs="4" >
