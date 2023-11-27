@@ -11,6 +11,7 @@ import SearchTab from "../SearchRecipes/SearchTab";
 import RecipeCard from "../SearchRecipes/RecipeCard";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import "./Home.css";
 
 function LoginHome(){
@@ -40,7 +41,7 @@ function LoginHome(){
                                         <SearchTab />
                                     </Container>
                                     <Container className="link-container">
-                                      <a className="new-recipe-link" href={'/recipe/add'}><FontAwesomeIcon className="add-plus-icon mx-2" icon={faPlusCircle}/>  Add a new recipe</a>
+                                      <Link className="new-recipe-link" href={'/recipe/add'}><FontAwesomeIcon className="add-plus-icon mx-2" icon={faPlusCircle}/>  Add a new recipe</Link>
                                     </Container>
                                     
 
