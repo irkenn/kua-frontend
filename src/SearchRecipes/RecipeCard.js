@@ -23,7 +23,7 @@ function RecipeCard({recipeInfo}){
                     null)}
                 </Row>
                     <Link to={`/recipe/${recipeInfo.id}`}>
-                        <CardImg src={recipeInfo.url_image || process.env.PUBLIC_URL + "/Not_found_recipe.jpg"}
+                        <CardImg src={recipeInfo.urlImage || process.env.PUBLIC_URL + "/Not_found_recipe.jpg"}
                                     alt="Recipe image" />
                     </Link>
                 <Row className="my-2">
