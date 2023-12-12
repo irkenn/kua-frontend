@@ -17,9 +17,9 @@ function AppNavbar(){
             let arr = []
             if (userInfo?.username){
                 arr.push(
-                    {label: "Add", path:"/recipe/add"},
-                    {label: "Search", path:"/search"},
                     {label: "Home", path:"/"},
+                    {label: "Search", path:"/search"},
+                    {label: "Add", path:"/recipe/add"},
                     {label: "Profile", path:`/user/${userInfo.id}`},
                     {label: "Logout", path:"/logout"}
                 )

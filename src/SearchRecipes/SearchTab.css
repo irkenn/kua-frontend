@@ -22,9 +22,16 @@ a{
     padding-bottom: 0;
 }
 
+.input-row {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Optional: Add this to horizontally center the input */
+}
+
 .search-input{
-    min-width: 300px;
+    /* min-width: 200px; */
     border-radius: 8px;
+    max-width: 95%;
 }
 
 .title{

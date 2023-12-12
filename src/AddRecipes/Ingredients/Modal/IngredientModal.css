@@ -1,25 +1,38 @@
 .modal-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    width: 95%;
-  }
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 95%;
+}
 
-  .results-container {
-    max-height: 600px; /* Set your desired maximum height */
-    overflow-y: auto;
-  }
+.results-container {
+  max-height: 600px; /* Set your desired maximum height */
+  overflow-y: auto;
+}
 
-  .form-group-search{
-    background-color: rgba(131, 181, 142, 0.79);
-    box-shadow: rgb(52, 48, 47) 2px 2px 5px;
-  }
+.form-group-search{
+  background-color: rgba(131, 181, 142, 0.79);
+  box-shadow: rgb(52, 48, 47) 2px 2px 5px;
+}
 
-  .btn{
-    font-weight: 600;
-  }
+.btn{
+  font-weight: 600;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Optional: Add this to horizontally center the input */
+}
+
+.search-input-ingredient {
+  border-radius: 8px;
+  max-width: 80%;
+  /* Additional styling for the input if needed */
+}
+

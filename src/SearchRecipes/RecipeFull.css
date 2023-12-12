@@ -8,7 +8,7 @@ img.user-img{
     position: relative;
 }
 
-.nutrition-info-container{
+/* .nutrition-info-container{
     background-color: aliceblue;
     font-size: small;
     font-weight: 600;
@@ -17,14 +17,8 @@ img.user-img{
 .nutrition-info-container hr {
     margin: 0.0rem;
     opacity: 0.8;
-}
+} */
 
-.medium-line{
-    border: none; /* Remove the default border */
-    height: 2px;  /* Set the thickness of the line */
-    background-color: #000000; 
-    margin-top:  30px;
-}
 
 .ultra-big-font{
     font-size: larger;
@@ -94,7 +88,6 @@ img.user-img{
 
 .white-container{
     background-color: aliceblue;
-    
     font-weight: 600;
 }
 

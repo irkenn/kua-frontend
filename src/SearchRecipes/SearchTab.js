@@ -3,7 +3,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./SearchTab.css";
 import {    Container, 
             Form,
-            FormGroup } from "reactstrap";
+            FormGroup, 
+            Row,
+            Col } from "reactstrap";
 
 function SearchTab(){
 
@@ -34,15 +36,21 @@ function SearchTab(){
             <Container className="form-container mt-3 d-flex justify-content-center align-items-center" >
                     <Form onSubmit={handleSubmit}>
                         <FormGroup className="form-group-search px-2">
-                            <button className="btn">Search</button>
-                            <input 
-                                className="search-input my-1 px-2"
-                                type="text"
-                                name="formData"
-                                value={formData}
-                                placeholder="type a recipe name here"
-                                onChange = { (e) => setFormData(e.target.value)}
-                                />
+                            <Row>
+                                <Col xs="3" className="mx-0">
+                                    <button className="btn">Search</button>
+                                </Col>
+                                <Col xs="9" className="my-0 input-row">
+                                    <input 
+                                        className="search-input my-1 px-2"
+                                        type="text"
+                                        name="formData"
+                                        value={formData}
+                                        placeholder="type a recipe name"
+                                        onChange = { (e) => setFormData(e.target.value)}
+                                        />
+                                </Col>
+                            </Row>
                         </FormGroup>
                     </Form>
             </Container>

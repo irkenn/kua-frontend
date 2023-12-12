@@ -14,11 +14,11 @@ function IngredientList({ingredientList, setIngredientList}){
     console.log('ingredientList', ingredientList);
 
     return(
-        <Container className="ingredient-list">
+        <div className="ingredient-list py-2">
           {ingredientList.length !== 0 ?  <Row>
-                <Col xs="6">
+                <Col xs="5">
                 </Col>
-                <Col xs="2" className="ingredient-header">
+                <Col xs="3" className="ingredient-header">
                     amount
                 </Col>
                 <Col xs="4" className="ingredient-header">
@@ -31,7 +31,7 @@ function IngredientList({ingredientList, setIngredientList}){
                                                                                                             setIngredientList={setIngredientList} 
                                                                                                             ingredientList={ingredientList}/> )}
             </>
-        </Container>
+        </div>
     );
 }
 

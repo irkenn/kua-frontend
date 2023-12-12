@@ -35,12 +35,12 @@ function SingleIngredient({ingredientData, ingredientList, setIngredientList}){
     
 
     return(
-        <Container className="single-ingredient my-2 py-1" >
+        <Container className="single-ingredient  py-1" >
             <Row className="d-flex align-items-center">
                 <Col xs="1" className="icon-container center">
-                    <FontAwesomeIcon className="add-minus-icon mx-2" icon={faMinusCircle} onClick={()=> deleteIngredient(id)}/>
+                    <FontAwesomeIcon className="add-minus-icon" icon={faMinusCircle} onClick={()=> deleteIngredient(id)}/>
                 </Col>
-                <Col xs="5" className="ingredient-name center">
+                <Col xs="4" className="ingredient-name center">
                     {name}
                 </Col>
                 <Col xs="2" className="center">

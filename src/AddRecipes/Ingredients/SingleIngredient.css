@@ -1,16 +1,16 @@
 .single-ingredient{
     background-color: rgb(244, 219, 238);
-    align-items: center;
+    align-items: left;
 }
 
 .add-minus-icon{
     color: rgb(155, 104, 162);
 }
 
-.icon-container{
+/* .icon-container{
     align-items: center;
     text-align: center;
-}
+} */
 
 .ingredient-name{
     text-align: left;
@@ -20,6 +20,7 @@
 .dropdown-caret{
     font-size: small;
 }
+
 .dropdown-name{
     font-size: small;
 }
@@ -31,6 +32,8 @@
 }
 
 .center{
-    align-items: center;
+    align-items: start;
     vertical-align: middle;
+    align-items: center;
+    text-align: end;
 }

@@ -55,12 +55,9 @@ function AddRecipe(){
                         ...ingredientList,
                         // newIngredient.id is a variable, it is required to use square brackets [] to dynamically compute the property key at runtime 
                         [newIngredient.id]:{...ingredientList.id, ...newIngredient},
-                        }));
-                        
-        // setIngredientList((ingredientList) => [...ingredientList, newIngredient]);
-        
+                        }));                      
+        // setIngredientList((ingredientList) => [...ingredientList, newIngredient]); 
     };
-
     //################## end of ingredientsList related code ##################
     
     useEffect( () => {
@@ -128,14 +125,13 @@ function AddRecipe(){
         }
     }
 
-
     return(
         <>
             {showIngredientModal && (<IngredientModal setIngredientInfo={setIngredientInfo} />)}
             <div className={showIngredientModal ? 'modal-overlay' : ''} onClick={() => toggleModal()}></div>
             <Container className='my-4'>
                 <Row>
-                <Col md={{ size: 8, offset:2}} lg={{size:6, offset:3}}>
+                    <Col md={{ size: 8, offset:2}} lg={{size:6, offset:3}}>
                         <Card className="edit-card">
                             <CardBody>
                                 <Form onSubmit={handleSubmit}>
@@ -147,7 +143,7 @@ function AddRecipe(){
                                                         name="title"
                                                         value={formData.title}
                                                         onChange={handleFormChange}
-                                                        placeholder="type here your recipe name" />
+                                                        placeholder="recipe name" />
                                             </FormGroup>
                                         </Col>
                                         <Col xs="4" className="d-flex">
@@ -158,7 +154,6 @@ function AddRecipe(){
                                         <Container className="ingredients-container">
                                             <h4 className="info-title">Ingredients</h4>
                                             <hr/>
-
                                             <IngredientList ingredientList={ingredientList} setIngredientList={setIngredientList}/>
                                             <button className="add-button btn-primary" 
                                                     type="button"
@@ -213,7 +208,7 @@ function AddRecipe(){
                                 </Form>
                             </CardBody>
                         </Card>
-                </Col>
+                    </Col>
                 </Row>
             </Container> 
         </>
